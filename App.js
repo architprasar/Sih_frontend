@@ -1,20 +1,17 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import { Router, Route, Link } from "./react-router";
-import Hoome from "./home";
-const Home = () => <Text>Home</Text>;
+import { StyleSheet, View } from "react-native";
+import { Router } from "./react-router";
+import Home from "./screens/home";
 
-const About = () => <Text>About</Text>;
 
-const App = () => (
-  <Router>
-    
+const App = () => {
+  return (
+    <Router>
       <View style={styles.container}>
-        <Route exact path="/" component={Hoome} />
-        <Route path="/about" component={About} />
+        <Home />
       </View>
-  </Router>
-);
-
+    </Router>
+  );
+};
 const styles = StyleSheet.create({
   container: {
     marginTop: 30,
