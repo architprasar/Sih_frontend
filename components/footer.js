@@ -10,16 +10,19 @@ import {
   Image,
 } from "react-native";
 import React from "react";
+import { useHistory } from "../react-router";
 import Icon, { Avatar } from "./icon.js";
 
 export default function Footer() {
   const [active, setActive] = React.useState(1);
   React.useEffect(() => {}, [active]);
+  const history = useHistory();
   return (
     <View style={style.top}>
       <Pressable
         style={[style.navbtn, { backgroundColor: "" }]}
         onPress={() => {
+          history.push("/");
           setActive(1);
         }}
       >
@@ -65,6 +68,7 @@ export default function Footer() {
       <Pressable
         style={[style.navbtn, { backgroundColor: "" }]}
         onPress={() => {
+          history.push("/login");
           setActive(4);
         }}
       >
